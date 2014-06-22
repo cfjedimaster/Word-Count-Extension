@@ -1,6 +1,6 @@
 {
     "name": "camden.wordcount",
-    "title": "CanIUse",
+    "title": "Word Count",
     "description": "Stupid simple word count for current document.",
     "homepage": "https://github.com/cfjedimaster/Word-Count-Extension",
     "version": "1.0.0",
