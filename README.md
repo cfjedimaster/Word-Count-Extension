@@ -9,4 +9,7 @@ length as well.
 
 History
 =======
+
+7/25/2015: Switch to using a bottom statusbar. Fixes #1.
+
 6/22/2014: Initial release.
