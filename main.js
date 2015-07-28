@@ -13,14 +13,24 @@ define(function (require, exports, module) {
 
     function _handleWordCount() {
         var editor = EditorManager.getCurrentFullEditor();
-
-        if(!editor) return;
+        if(!editor) return; 
         var text = editor.document.getText();
         //Credit: http://stackoverflow.com/questions/6543917/count-number-of-word-from-given-string-using-javascript 
         var count = text.split(/\s+/).length
         $("#wordcountIndicator").text(count);
     }
     
+    function activeEditorChangeHandler(event, current, previous) {
+        if (current) {
+            current.on("editorChange", _handleWordCount);
+        }
+
+        if (previous) {
+            //Removing all old Handlers
+            previous.off("editorChange", _handleWordCount);
+        }
+    }
+
     AppInit.appReady(function () {
         var textWord = {
             "en": {
@@ -39,6 +49,9 @@ define(function (require, exports, module) {
         
         DocumentManager.on("documentSaved", _handleWordCount);
         MainViewManager.on("currentFileChange", _handleWordCount);
+        activeEditorChangeHandler(null, EditorManager.getActiveEditor(), null);
+
+        EditorManager.on("activeEditorChange", activeEditorChangeHandler);
 
         StatusBar.addIndicator('WordCount', $("<div>"+textWord[languageBrackets].text+"<span id='wordcountIndicator'></span></div>"), true);
 

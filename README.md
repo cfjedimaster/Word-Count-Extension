@@ -10,6 +10,9 @@ length as well.
 History
 =======
 
+7/28/2015: Accepted PR from Toni to add a Spanish version.
+Got "word count as you type" working thanks to Prashanth Nethi helping me out on Slack!
+
 7/25/2015: Switch to using a bottom statusbar. Fixes #1.
 
 6/22/2014: Initial release.
