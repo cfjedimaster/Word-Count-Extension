@@ -22,11 +22,25 @@ define(function (require, exports, module) {
     }
     
     AppInit.appReady(function () {
-
+        var textWord = {
+            "en": {
+                "text": "Word Count: "
+            },
+            "es-ES": {
+                "text": "Nº de palabras: "
+            }
+        }
+        
+        var languageBrackets = brackets.getLocale();
+        
+        if(!textWord[languageBrackets]) {
+            languageBrackets = "en";
+        }
+        
         DocumentManager.on("documentSaved", _handleWordCount);
         MainViewManager.on("currentFileChange", _handleWordCount);
 
-        StatusBar.addIndicator('WordCount', $("<div>Word Count: <span id='wordcountIndicator'></span></div>"), true);
+        StatusBar.addIndicator('WordCount', $("<div>"+textWord[languageBrackets].text+"<span id='wordcountIndicator'></span></div>"), true);
 
         _handleWordCount();
 
