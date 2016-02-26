@@ -10,6 +10,12 @@ length as well.
 History
 =======
 
+2/25/16: Accepted PR from @vankasteelj:
+
+* Adds french localization
+* Allows dynamic string format (using utils/StringUtils)
+* Displays current selection wordcount when there's a selection, total words otherwise.
+
 7/28/2015: Accepted PR from Toni to add a Spanish version.
 Got "word count as you type" working thanks to Prashanth Nethi helping me out on Slack!
 
