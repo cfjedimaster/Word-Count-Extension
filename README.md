@@ -9,6 +9,13 @@ length as well.
 
 History
 =======
+4/7/16: Accepted PR from @vankasteelj:
+
+* Add char count (spaces included) on hover
+* Update description in readme
+* Lint (3 warnings fixed)
+* Use singlequotes
+* Remove unneccessary trailing underscore in _handleWordCount
 
 2/25/16: Accepted PR from @vankasteelj:
 
